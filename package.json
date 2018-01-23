@@ -1,6 +1,6 @@
 {
   "name": "dexie-opened-databases-addon",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An addon for Dexie.js that keeps track of opened connections",
   "main": "dist/dexieOpenedDatabasesAddon.js",
   "module": "dist/dexieOpenedDatabasesAddon.es.js",
