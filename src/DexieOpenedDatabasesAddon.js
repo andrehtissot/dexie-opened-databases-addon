@@ -11,17 +11,22 @@
  */
 
 export default function DexieOpenedDatabasesAddon(db) {
-  if(Dexie.openedDatabases === undefined) {
-    Dexie.openedDatabases = new Map()
-  }
-  Dexie.openedDatabases.set(db.name, db)
-
+  db.open = Dexie.override(db.open, (open) => {
+    return () => {
+      Dexie.openedDatabases.set(db.name, db)
+      return open.apply(this, arguments);
+    }
+  })
   db.close = Dexie.override(db.close, (close) => {
     return () => {
       Dexie.openedDatabases.delete(db.name)
       return close.apply(this, arguments);
     }
   })
+}
+
+if(Dexie.openedDatabases === undefined) {
+  Dexie.openedDatabases = new Map()
 }
 
 // Dexie.addons.push(DexieOpenedDatabasesAddon)

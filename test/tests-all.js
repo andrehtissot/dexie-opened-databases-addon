@@ -8,9 +8,10 @@ module("Dexie.openedDatabases")
 asyncTest("Dexie.openedDatabases holds opened databases objects", async ( assert ) => {
     const db = newDatabase()
     assert.ok(Dexie.openedDatabases instanceof Map, 'Dexie.openedDatabases holds a Map')
-    assert.equal(typeof Dexie.openedDatabases.get(db.name), 'object', 'Dexie.openedDatabases holds a Map with db instances')
+    assert.equal(Dexie.openedDatabases.size, 0, 'Dexie.openedDatabases holds an empty Map')
     db.version(1).stores({})
     await db.open()
+    assert.equal(typeof Dexie.openedDatabases.get(db.name), 'object', 'Dexie.openedDatabases holds a Map with the db instance')
     Dexie.openedDatabases.get(db.name).close()
 })
 
