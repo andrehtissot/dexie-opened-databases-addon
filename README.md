@@ -5,3 +5,9 @@ An addon for Dexie.js that keeps track of opened connections
 [![npm](https://img.shields.io/npm/dt/dexie-opened-databases-addon.svg)](https://www.npmjs.com/package/dexie-opened-databases-addon)
 [![npm](https://img.shields.io/npm/v/dexie-opened-databases-addon.svg)](https://www.npmjs.com/package/dexie-opened-databases-addon)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+### How it works
+
+When a new Dexie is instanciated ie `new Dexie(dbName, { addons: [ DexieOpenedDatabasesAddon ] })`, this instance is kept as `Dexie.openedDatabases`, in a Map with the database name as key.
+
+When the connection is closed ie `db.close()`, it's instance is removed from the `Dexie.openedDatabases` Map.
