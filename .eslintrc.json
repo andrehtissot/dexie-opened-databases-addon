@@ -1,0 +1,17 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {}
+  },
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "no-undef": ["error"]
+  },
+  "globals": {
+    "Dexie": true,
+    "Map": true
+  }
+}

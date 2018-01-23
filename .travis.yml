@@ -1,0 +1,13 @@
+sudo: false
+language: node_js
+node_js:
+  - 9
+before_install:
+  - npm install
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+script:
+  - npm run build dev
+  - karma start test/karma/karma.conf.chrome.js --single-run
+  - karma start test/karma/karma.conf.firefox.js --single-run

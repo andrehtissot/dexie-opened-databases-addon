@@ -1,0 +1,11 @@
+/*!
+ * Dexie Opened Databases Addon {version} ({date})
+ * An addon for Dexie.js that keeps track of opened connections
+ * https://github.com/andrehtissot/dexie-opened-databases-addon
+ *
+ * Requires Dexie IndexedDB Addon
+ * http://dexie.org
+ *
+ * Copyright André Augusto Tissot
+ * Released under the MIT license
+ */
