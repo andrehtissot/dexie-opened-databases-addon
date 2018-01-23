@@ -8,6 +8,6 @@ An addon for Dexie.js that keeps track of opened connections
 
 ### How it works
 
-When a new Dexie is instanciated ie `new Dexie(dbName, { addons: [ DexieOpenedDatabasesAddon ] })`, this instance is kept as `Dexie.openedDatabases`, in a Map with the database name as key.
+When a new Dexie is instanciated ie `new Dexie(dbName, { addons: [ DexieOpenedDatabasesAddon ] }).open()`, this instance is kept as `Dexie.openedDatabases`, in a Map with the database name as key.
 
 When the connection is closed ie `db.close()`, it's instance is removed from the `Dexie.openedDatabases` Map.
