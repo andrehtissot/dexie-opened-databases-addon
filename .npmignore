@@ -3,7 +3,10 @@ test/
 tools/
 .travis.yml
 .gitignore
-
+dist/*.min.js
+dist/*.min.js.map
+.babelrc
+.eslintrc.json
 
 # From .gitignore:
 # Ignore node_modules
