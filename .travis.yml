@@ -1,8 +1,4 @@
-#Temporary Meltdown workaround BEGIN
-sudo: required
-#Temporary Meltdown workaround ELSE
-# sudo: false
-#Temporary Meltdown workaround END
+sudo: false
 language: node_js
 node_js:
   - 9
