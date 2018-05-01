@@ -4,7 +4,7 @@ export default {
   input: 'src/DexieOpenedDatabasesAddon.js',
   output: [
     {
-      file: 'dist/dexieOpenedDatabasesAddon.es.js',
+      file: 'dist/DexieOpenedDatabasesAddon.es.js',
       format: 'es',
       name: 'DexieOpenedDatabasesAddon',
       sourcemap: true

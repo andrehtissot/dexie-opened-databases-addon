@@ -1,4 +1,3 @@
-import DexieOpenedDatabasesAddon from '../src/DexieOpenedDatabasesAddon'
 import {test, done} from 'QUnit'
 
 export function asyncTest(testDescription, testFunction, options = { autoDone: true }) {

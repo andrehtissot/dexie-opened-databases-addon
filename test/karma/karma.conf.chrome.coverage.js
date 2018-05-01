@@ -4,12 +4,12 @@ module.exports = function (config) {
     configurations.reporters.push('coverage')
     configurations.browsers = [ 'Chrome' ]
     configurations.preprocessors = {
-      'src/**/*.js': ['coverage']
+      'dist/*.js': ['coverage']
     }
     configurations.coverageReporter = {
-      type : 'lcov',
-      dir : 'coverage/',
-      file: 'lcov.info'
+      type: 'lcovonly',
+      dir: 'coverage/',
+      subdir: './'
     }
     configurations.plugins.push('karma-chrome-launcher')
     configurations.plugins.push('karma-coverage')

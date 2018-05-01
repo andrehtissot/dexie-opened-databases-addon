@@ -14,10 +14,11 @@ export default {
     name: 'DexieOpenedDatabasesAddonTests',
     sourcemap: true,
     globals: {
-      QUnit: "QUnit"
+      QUnit: 'QUnit',
+      DexieOpenedDatabasesAddon: 'DexieOpenedDatabasesAddon'
     }
   },
-  external: ['QUnit', 'babel-runtime'],
+  external: ['QUnit', 'babel-runtime', 'DexieOpenedDatabasesAddon'],
   plugins: [
     sourcemaps(),
     nodeResolve({ browser: true }),

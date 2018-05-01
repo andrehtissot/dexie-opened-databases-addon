@@ -15,7 +15,7 @@ module.exports = {
         'test/karma/karma-env.js',
         { pattern: 'test/worker.js', watched: true, included: false, served: true },
         { pattern: '!(node_modules|tmp)*/*.map', watched: false, included: false, served: true },
-        'dist/dexieOpenedDatabasesAddon.js',
+        'dist/DexieOpenedDatabasesAddon.js',
         'test/tmp/tests.js',
         { watched: true, included: false, served: true, pattern: 'test/worker.js' }
     ],

@@ -1,10 +1,10 @@
 {
   "name": "dexie-opened-databases-addon",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "An addon for Dexie.js that keeps track of opened connections",
-  "main": "dist/dexieOpenedDatabasesAddon.js",
-  "module": "dist/dexieOpenedDatabasesAddon.es.js",
-  "jsnext:main": "dist/dexieOpenedDatabasesAddon.es.js",
+  "main": "dist/DexieOpenedDatabasesAddon.js",
+  "module": "dist/DexieOpenedDatabasesAddon.es.js",
+  "jsnext:main": "dist/DexieOpenedDatabasesAddon.es.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/andrehtissot/dexie-opened-databases-addon.git"
@@ -26,6 +26,7 @@
     "test": "npm run test:chrome",
     "test:debug": "karma start test/karma/karma.conf.chrome.js --log-level debug",
     "test:chrome": "npm run build dev && karma start test/karma/karma.conf.chrome.js --single-run",
+    "test:chrome:coverage": "npm run build dev && karma start test/karma/karma.conf.chrome.coverage.js --single-run",
     "test:firefox": "npm run build dev && karma start test/karma/karma.conf.firefox.js --single-run",
     "test:safari": "npm run build dev && karma start test/karma/karma.conf.safari.js --single-run"
   },
@@ -34,26 +35,27 @@
       "# Build all targets",
       "just-build release test"
     ],
-    "dexie-orm": [
+    "dexie-addon": [
       "# Build the umd module",
       "rollup -c tools/build-configs/rollup.config.js",
-      "babel --module-id DexieORMAddon dist/dexieOpenedDatabasesAddon.es.js -o dist/dexieOpenedDatabasesAddon.js --source-maps",
-      "node tools/insertBanner.js dist/dexieOpenedDatabasesAddon.js dist/dexieOpenedDatabasesAddon.es.js",
-      "node tools/replaceVersionAndDate.js dist/dexieOpenedDatabasesAddon.js dist/dexieOpenedDatabasesAddon.es.js",
+      "babel --module-id DexieOpenedDatabasesAddon dist/DexieOpenedDatabasesAddon.es.js -o dist/DexieOpenedDatabasesAddon.js --source-maps",
+      "node tools/insertBanner.js dist/DexieOpenedDatabasesAddon.js dist/DexieOpenedDatabasesAddon.es.js",
+      "node tools/replaceVersionAndDate.js dist/DexieOpenedDatabasesAddon.js dist/DexieOpenedDatabasesAddon.es.js",
+      "node tools/replaceExportForGlobal.js dist/DexieOpenedDatabasesAddon.js",
       "eslint src"
     ],
     "release": [
       "# Build the umd module and minifies it.",
-      "just-build dexie-orm",
-      "uglifyjs dist/dexieOpenedDatabasesAddon.js -m -c -o dist/dexieOpenedDatabasesAddon.min.js --source-map \"filename='dist/dexieOpenedDatabasesAddon.min.js.map',includeSources='dist/dexieOpenedDatabasesAddon.js.map'\""
+      "just-build dexie-addon",
+      "uglifyjs dist/DexieOpenedDatabasesAddon.js -m -c -o dist/DexieOpenedDatabasesAddon.min.js --source-map \"filename='dist/DexieOpenedDatabasesAddon.min.js.map',includeSources='dist/DexieOpenedDatabasesAddon.js.map'\""
     ],
     "dev": [
       "# Build the umd module and the tests",
-      "just-build dexie-orm test"
+      "just-build dexie-addon test"
     ],
     "gzip": [
       "# Optionally gzip to find the size of the minified & gzipped version",
-      "gzip dist/dexieOpenedDatabasesAddon.min.js -k -f -9"
+      "gzip dist/DexieOpenedDatabasesAddon.min.js -k -f -9"
     ],
     "test": [
       "# Build the test suite.",
@@ -74,11 +76,11 @@
     "just-build": "^0.9.16",
     "karma": "^2.0.2",
     "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.1",
     "karma-firefox-launcher": "^1.1.0",
     "karma-mocha-reporter": "^2.2.5",
-    "karma-safari-launcher": "^1.0.0",
     "karma-qunit": "^2.0.1",
-    "karma-coverage": "^1.1.1",
+    "karma-safari-launcher": "^1.0.0",
     "qunit": "^2.6.0",
     "qunitjs": "^2.4.1",
     "rollup": "^0.58.2",
