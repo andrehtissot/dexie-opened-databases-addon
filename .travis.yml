@@ -5,9 +5,9 @@ node_js:
 addons:
   code_climate:
     repo_token:
-      secure: A+IghMdSFwn+XIh2Re+lkVbyMnRsRT7zHHetOOqdr5gLQQYBuvVCNbA+X5suEjPydaPxrOsr/lUW7xHyHw5tq6SRzT/kEefs1KG+8yeJOoMz1QtUbLtu00Pl8o0IZobJoQnMsoYbCtimfW5wzAC65w80Rhz1Xj92N0YiUfLQ006Kb1+M8cqkzecdb1/Kw6TKHSO+hOYKsahjGuHzXz0q9TzaKRbSet4bMhMW0u3U1U2CyZwltfxCezjJyYUpvFRngigEcSgXd3Em43pzZrVZ2rFWajlUkbhKPRBDxlM6cP/duMHvcgmRzVU4mtukGgpg4ioX6EUefQiONLAHIp/emGwPIvPirAVuEeTsKoDgU82S7e48PF03erhf5lvUURdjigxOyGBxdEXg0J8/zpTalQLAa8XFovbFFLUzZyP6ciOa5lWmH2VaUPAodDRx22nPPwCDjp03B+It0cPuLRITPhXXTeTZHZE6eOlbndoFiWju/NIYCmzA7teyqPEAlohhvS6E0gucs9RiP7mb5b8cwvFUNkypEPAYZnCtnvFCdXZf0gjvA7T9Q9MPMb0iAeSnIpUQ/I9nuEq2m78XCuMmPtvGZ4yKa1/NHtNZgERQnfks/t8H0t99rzJD8E3JUVGiKsn0cXApPAj2UvE6npXLliUs/zjJaSNZQ4V3Ll5wJ9Y=
+      secure: "A+IghMdSFwn+XIh2Re+lkVbyMnRsRT7zHHetOOqdr5gLQQYBuvVCNbA+X5suEjPydaPxrOsr/lUW7xHyHw5tq6SRzT/kEefs1KG+8yeJOoMz1QtUbLtu00Pl8o0IZobJoQnMsoYbCtimfW5wzAC65w80Rhz1Xj92N0YiUfLQ006Kb1+M8cqkzecdb1/Kw6TKHSO+hOYKsahjGuHzXz0q9TzaKRbSet4bMhMW0u3U1U2CyZwltfxCezjJyYUpvFRngigEcSgXd3Em43pzZrVZ2rFWajlUkbhKPRBDxlM6cP/duMHvcgmRzVU4mtukGgpg4ioX6EUefQiONLAHIp/emGwPIvPirAVuEeTsKoDgU82S7e48PF03erhf5lvUURdjigxOyGBxdEXg0J8/zpTalQLAa8XFovbFFLUzZyP6ciOa5lWmH2VaUPAodDRx22nPPwCDjp03B+It0cPuLRITPhXXTeTZHZE6eOlbndoFiWju/NIYCmzA7teyqPEAlohhvS6E0gucs9RiP7mb5b8cwvFUNkypEPAYZnCtnvFCdXZf0gjvA7T9Q9MPMb0iAeSnIpUQ/I9nuEq2m78XCuMmPtvGZ4yKa1/NHtNZgERQnfks/t8H0t99rzJD8E3JUVGiKsn0cXApPAj2UvE6npXLliUs/zjJaSNZQ4V3Ll5wJ9Y="
 before_script:
-  - npm install codeclimate-test-reporter istanbul -g
+  - npm install codeclimate-test-reporter -g
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 #Temporary Meltdown workaround BEGIN
@@ -16,8 +16,7 @@ before_script:
 #Temporary Meltdown workaround END
 script:
   - npm run build dev
-  - karma start test/karma/karma.conf.chrome.js --single-run
+  - karma start test/karma/karma.conf.coverage.chrome.js --single-run
   - karma start test/karma/karma.conf.firefox.js --single-run
-  - istanbul cover node_modules/mocha/bin/_mocha -- -R spec
 after_script:
   - codeclimate-test-reporter < ./coverage/lcov.info
