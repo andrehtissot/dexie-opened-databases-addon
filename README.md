@@ -5,6 +5,7 @@ An addon for Dexie.js that keeps track of opened connections
 [![npm](https://img.shields.io/npm/dt/dexie-opened-databases-addon.svg)](https://www.npmjs.com/package/dexie-opened-databases-addon)
 [![npm](https://img.shields.io/npm/v/dexie-opened-databases-addon.svg)](https://www.npmjs.com/package/dexie-opened-databases-addon)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Known Vulnerabilities](https://snyk.io/test/github/andrehtissot/dexie-opened-databases-addon/badge.svg?targetFile=package.json)](https://snyk.io/test/github/andrehtissot/dexie-opened-databases-addon?targetFile=package.json)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1257f78f1a31db60f684/maintainability)](https://codeclimate.com/github/andrehtissot/dexie-opened-databases-addon/maintainability)
 
 ### How it works
