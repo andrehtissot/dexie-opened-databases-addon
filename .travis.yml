@@ -16,7 +16,7 @@ before_script:
 #Temporary Meltdown workaround END
 script:
   - npm run build dev
-  - karma start test/karma/karma.conf.coverage.chrome.js --single-run
+  - karma start test/karma/karma.conf.chrome.coverage.js --single-run
   - karma start test/karma/karma.conf.firefox.js --single-run
 after_script:
   - codeclimate-test-reporter < ./coverage/lcov.info
