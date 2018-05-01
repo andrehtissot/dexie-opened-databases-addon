@@ -8,7 +8,8 @@ module.exports = function (config) {
     }
     configurations.coverageReporter = {
       type : 'lcov',
-      dir : 'coverage/'
+      dir : 'coverage/',
+      file: 'lcov.info'
     }
     configurations.plugins.push('karma-chrome-launcher')
     configurations.plugins.push('karma-coverage')
