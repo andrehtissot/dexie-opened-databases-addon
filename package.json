@@ -87,7 +87,7 @@
     "rollup-plugin-commonjs": "^9.1.3",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
-    "uglify-js": "^3.3.23"
+    "uglify-es": "^3.3.9"
   },
   "dependencies": {
     "dexie": "^2.0.3"
