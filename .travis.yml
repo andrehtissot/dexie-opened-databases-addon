@@ -1,14 +1,13 @@
 sudo: false
-env:
-  global:
-    - CC_TEST_REPORTER_ID=787a2f89b15c637323c7340d65ec17e898ac44480706b4b4122ea040c2a88f1d
 language: node_js
 node_js:
   - 9
+addons:
+  code_climate:
+    repo_token:
+      secure: A+IghMdSFwn+XIh2Re+lkVbyMnRsRT7zHHetOOqdr5gLQQYBuvVCNbA+X5suEjPydaPxrOsr/lUW7xHyHw5tq6SRzT/kEefs1KG+8yeJOoMz1QtUbLtu00Pl8o0IZobJoQnMsoYbCtimfW5wzAC65w80Rhz1Xj92N0YiUfLQ006Kb1+M8cqkzecdb1/Kw6TKHSO+hOYKsahjGuHzXz0q9TzaKRbSet4bMhMW0u3U1U2CyZwltfxCezjJyYUpvFRngigEcSgXd3Em43pzZrVZ2rFWajlUkbhKPRBDxlM6cP/duMHvcgmRzVU4mtukGgpg4ioX6EUefQiONLAHIp/emGwPIvPirAVuEeTsKoDgU82S7e48PF03erhf5lvUURdjigxOyGBxdEXg0J8/zpTalQLAa8XFovbFFLUzZyP6ciOa5lWmH2VaUPAodDRx22nPPwCDjp03B+It0cPuLRITPhXXTeTZHZE6eOlbndoFiWju/NIYCmzA7teyqPEAlohhvS6E0gucs9RiP7mb5b8cwvFUNkypEPAYZnCtnvFCdXZf0gjvA7T9Q9MPMb0iAeSnIpUQ/I9nuEq2m78XCuMmPtvGZ4yKa1/NHtNZgERQnfks/t8H0t99rzJD8E3JUVGiKsn0cXApPAj2UvE6npXLliUs/zjJaSNZQ4V3Ll5wJ9Y=
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+  - npm install codeclimate-test-reporter istanbul -g
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 #Temporary Meltdown workaround BEGIN
@@ -19,6 +18,6 @@ script:
   - npm run build dev
   - karma start test/karma/karma.conf.chrome.js --single-run
   - karma start test/karma/karma.conf.firefox.js --single-run
+  - istanbul cover node_modules/mocha/bin/_mocha -- -R spec
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-
+  - codeclimate-test-reporter < ./coverage/lcov.info
