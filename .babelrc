@@ -3,18 +3,45 @@
     [
       "env", {
         "targets": {
-          "chrome": "64",
-          "edge": "15",
-          "firefox": "58",
-          "safari": "11",
-          "ios": "11",
-          "opera": "49",
-          "node": "8"
+          "chrome": "69",
+          "edge": "17",
+          "firefox": "62",
+          "safari": "12",
+          "ios": "12",
+          "opera": "56"
         },
         "modules": "umd",
         "debug": false
       }
     ]
   ],
-  "plugins": []
+  "plugins": [],
+  "env": {
+    "coverage-test": {
+      "presets": [
+        [
+          "env", {
+            "targets": {
+              "chrome": "54"
+            },
+            "modules": "commonjs",
+            "debug": false
+          }
+        ]
+      ]
+    },
+    "ie11-support": {
+      "presets": [
+        [
+          "env", {
+            "targets": {
+              "browsers": "ie >= 11"
+            },
+            "modules": "commonjs",
+            "debug": false
+          }
+        ]
+      ]
+    }
+  }
 }

@@ -8,7 +8,7 @@ module.exports = function (config) {
       'tools/tmp/rollup/tests.testCoverage.js': ['coverage']
     }
     configurations.coverageReporter = {
-      type: 'lcovonly',
+      type: 'html',
       dir: 'coverage/',
       subdir: './'
     }
