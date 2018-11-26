@@ -1,6 +1,7 @@
 # dexie-opened-databases-addon
 An addon for Dexie.js that keeps track of opened connections
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/dafc9b24e8854347ba2cd0ab7cbf9b3b)](https://app.codacy.com/app/andrehtissot/dexie-opened-databases-addon?utm_source=github.com&utm_medium=referral&utm_content=andrehtissot/dexie-opened-databases-addon&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://www.travis-ci.org/andrehtissot/dexie-opened-databases-addon.svg?branch=master)](https://www.travis-ci.org/andrehtissot/dexie-opened-databases-addon)
 [![npm downloads](https://img.shields.io/npm/dt/dexie-opened-databases-addon.svg)](https://www.npmjs.com/package/dexie-opened-databases-addon)
 [![npm version](https://img.shields.io/npm/v/dexie-opened-databases-addon.svg)](https://www.npmjs.com/package/dexie-opened-databases-addon)
