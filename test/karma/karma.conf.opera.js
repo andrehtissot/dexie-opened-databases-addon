@@ -1,6 +1,6 @@
 const configurations = require('./karma.common')
 
-module.exports = config => {
+module.exports = (config) => {
     configurations.browsers = ['OperaCustom']
     configurations.plugins.push('karma-opera-launcher')
     configurations.files.push('dist/DexieOpenedDatabasesAddon.js')

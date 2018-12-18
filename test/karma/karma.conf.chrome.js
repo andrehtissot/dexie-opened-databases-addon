@@ -1,6 +1,6 @@
 const configurations = require('./karma.common')
 
-module.exports = config => {
+module.exports = (config) => {
     configurations.browsers = ['Chrome']
     configurations.plugins.push('karma-chrome-launcher')
     configurations.files.push('dist/DexieOpenedDatabasesAddon.js')

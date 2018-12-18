@@ -1,6 +1,6 @@
 const configurations = require('./karma.common')
 
-module.exports = config => {
+module.exports = (config) => {
     configurations.reporters.push('coverage')
     configurations.singleRun = true
     configurations.browsers = ['Chrome']

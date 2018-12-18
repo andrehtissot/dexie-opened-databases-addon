@@ -1,6 +1,6 @@
 const configurations = require('./karma.common')
 
-module.exports = config => {
+module.exports = (config) => {
     configurations.browsers = ['Safari']
     configurations.plugins.push('karma-safari-launcher')
     configurations.files.push('test/karma/karma-env.safari.js')

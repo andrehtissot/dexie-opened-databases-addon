@@ -5,7 +5,7 @@ deleteAllDatabasesWhenDone()
 
 module('Dexie.openedDatabases')
 
-asyncTest('Dexie.openedDatabases holds opened databases objects', async assert => {
+asyncTest('Dexie.openedDatabases holds opened databases objects', async (assert) => {
     const db = newDatabase()
     assert.ok(Dexie.openedDatabases instanceof Map, 'Dexie.openedDatabases holds a Map')
     assert.equal(Dexie.openedDatabases.size, 0, 'Dexie.openedDatabases holds an empty Map')
@@ -19,7 +19,7 @@ asyncTest('Dexie.openedDatabases holds opened databases objects', async assert =
     Dexie.openedDatabases.get(db.name).close()
 })
 
-asyncTest('should not hold closed database connections', async assert => {
+asyncTest('should not hold closed database connections', async (assert) => {
     const db = newDatabase()
     db.version(1).stores({})
     await db.open()
