@@ -37,7 +37,12 @@
     "test:safari": "npm run build dev && karma start test/karma/karma.conf.safari.js --single-run",
     "test:safari:debug": "npm run build dev && karma start test/karma/karma.conf.safari.js --log-level debug",
     "test:opera": "npm run build dev && karma start test/karma/karma.conf.opera.js --single-run",
-    "test:opera:debug": "npm run build dev && karma start test/karma/karma.conf.opera.js --log-level debug"
+    "test:opera:debug": "npm run build dev && karma start test/karma/karma.conf.opera.js --log-level debug",
+    "prettier-src": "find ./src -name '*.js' -or -name '*.json' | xargs prettier --write",
+    "prettier-tools": "find ./tools -name '*.js' -or -name '*.json' | grep -v tools/tmp | xargs prettier --write",
+    "prettier-test": "find ./test -name '*.js' -or -name '*.json' | grep -v test/tmp | xargs prettier --write",
+    "prettier-all": "npm run prettier-src && npm run prettier-tools && npm run prettier-test",
+    "eslint-all": "eslint --fix ./src ./tools ./test --ignore-pattern test/tmp --ignore-pattern tools/tmp"
   },
   "just-build": {
     "default": [
@@ -50,8 +55,7 @@
       "babel --module-id DexieOpenedDatabasesAddon dist/DexieOpenedDatabasesAddon.es.js -o dist/DexieOpenedDatabasesAddon.js --source-maps",
       "node tools/insertBanner.js dist/DexieOpenedDatabasesAddon.js dist/DexieOpenedDatabasesAddon.es.js",
       "node tools/replaceVersionAndDate.js dist/DexieOpenedDatabasesAddon.js dist/DexieOpenedDatabasesAddon.es.js",
-      "node tools/replaceExportForGlobal.js dist/DexieOpenedDatabasesAddon.js",
-      "eslint src"
+      "node tools/replaceExportForGlobal.js dist/DexieOpenedDatabasesAddon.js"
     ],
     "release": [
       "# Build the umd module and minifies it.",
@@ -108,10 +112,11 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "cross-env": "^5.2.0",
-    "eslint": "^5.9.0",
-    "hoek": "^6.0.2",
+    "eslint": "^5.10.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "hoek": "^6.1.2",
     "just-build": "^0.9.16",
-    "karma": "^3.1.1",
+    "karma": "^3.1.4",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.2",
     "karma-edge-launcher": "^0.4.2",
@@ -121,14 +126,15 @@
     "karma-opera-launcher": "^1.0.0",
     "karma-qunit": "^2.1.0",
     "karma-safari-launcher": "^1.0.0",
+    "merge": ">=1.2.1",
+    "prettier": "^1.15.3",
     "qunit": "^2.8.0",
     "qunitjs": "^2.4.1",
-    "rollup": "^0.67.0",
+    "rollup": "^0.68.0",
     "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
-    "uglify-es": "^3.3.9",
-    "merge": ">=1.2.1"
+    "uglify-es": "^3.3.9"
   },
   "dependencies": {
     "dexie": "^2.0.4"

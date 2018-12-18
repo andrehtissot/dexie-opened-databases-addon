@@ -1,4 +1,5 @@
 {
+  "plugins": ["prettier"],
   "parserOptions": {
     "ecmaVersion": 2017,
     "sourceType": "module",
@@ -7,8 +8,14 @@
   "env": {
     "node": true
   },
+  "extends": "eslint:recommended",
   "rules": {
-    "no-undef": ["error"]
+    "no-undef": ["error"],
+    "semi": ["error", "never"],
+    "indent": ["error", 4, { "SwitchCase": 1 }],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "prettier/prettier": "error"
   },
   "globals": {
     "Dexie": true,
