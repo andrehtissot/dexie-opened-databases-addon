@@ -47,7 +47,8 @@
     "just-build": {
         "default": [
             "# Build all targets",
-            "just-build release test gzip"
+            "just-build release test",
+            "just-build gzip"
         ],
         "main": [
             "# Build the umd module",
