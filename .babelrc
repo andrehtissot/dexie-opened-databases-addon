@@ -29,19 +29,6 @@
           }
         ]
       ]
-    },
-    "ie11-support": {
-      "presets": [
-        [
-          "env", {
-            "targets": {
-              "browsers": "ie >= 11"
-            },
-            "modules": "commonjs",
-            "debug": false
-          }
-        ]
-      ]
     }
   }
 }
