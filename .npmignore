@@ -9,8 +9,6 @@ dist/*.min.js.map
 .babelrc
 .eslintrc.json
 .npmignore
-LICENSE
-README.md
 
 # From .gitignore:
 # Ignore node_modules
