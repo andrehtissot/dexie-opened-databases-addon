@@ -12,15 +12,15 @@
 
 export default function DexieOpenedDatabasesAddon(db) {
     db.open = Dexie.override(db.open, (open) => {
-        return () => {
+        return function() {
             Dexie.openedDatabases.set(db.name, db)
-            return open.apply(db, arguments)
+            return open.apply(this, arguments)
         }
     })
     db.close = Dexie.override(db.close, (close) => {
-        return () => {
+        return function() {
             Dexie.openedDatabases.delete(db.name)
-            return close.apply(db, arguments)
+            return close.apply(this, arguments)
         }
     })
 }
