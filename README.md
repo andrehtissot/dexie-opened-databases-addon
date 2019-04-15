@@ -18,6 +18,7 @@ An addon for Dexie.js that keeps track of opened connections
 [![minzipped size](https://img.shields.io/bundlephobia/minzip/dexie-opened-databases-addon.svg)](https://www.npmjs.com/package/dexie-opened-databases-addon)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/andrehtissot/dexie-opened-databases-addon.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/andrehtissot/dexie-opened-databases-addon/context:javascript)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/andrehtissot/dexie-opened-databases-addon.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/andrehtissot/dexie-opened-databases-addon/alerts/)
+[![DeepScan grade](https://deepscan.io/api/teams/3417/projects/5066/branches/39493/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=3417&pid=5066&bid=39493)
 
 ### How it works
 
