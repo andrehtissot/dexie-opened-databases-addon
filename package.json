@@ -1,6 +1,6 @@
 {
     "name": "dexie-opened-databases-addon",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "An addon for Dexie.js that keeps track of opened connections",
     "main": "dist/DexieOpenedDatabasesAddon.js",
     "module": "dist/DexieOpenedDatabasesAddon.es.js",
@@ -22,6 +22,7 @@
     },
     "scripts": {
         "build": "just-build",
+        "build-release": "just-build release",
         "watch": "just-build --watch",
         "test": "npm run test:chrome",
         "test:chrome": "just-build dev && karma start test/karma/karma.conf.chrome.js --single-run",
