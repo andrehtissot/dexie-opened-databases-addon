@@ -1,5 +1,7 @@
 sudo: false
 language: node_js
+services:
+  - xvfb
 node_js:
   - 10
 addons:
