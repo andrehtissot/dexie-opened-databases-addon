@@ -4,12 +4,12 @@
             "env",
             {
                 "targets": {
-                    "chrome": "71",
+                    "chrome": "77",
                     "edge": "18",
-                    "firefox": "64",
-                    "safari": "12",
-                    "ios": "12",
-                    "opera": "56"
+                    "firefox": "69",
+                    "safari": "13",
+                    "ios": "13",
+                    "opera": "62"
                 },
                 "modules": "umd",
                 "debug": false
